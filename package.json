@@ -1,0 +1,37 @@
+{
+  "name": "medical_clinic_website",
+  "version": "1.0.0",
+  "description": "This project is a website for one medical clinic made for discipline of Software engineering of CEFETMG",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AssisRaphael/medical_clinic_website.git"
+  },
+  "keywords": [
+    "website",
+    "CEFETMG",
+    "node"
+  ],
+  "author": "Raphael Assis, José Antônio, Gleiston Assis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AssisRaphael/medical_clinic_website/issues"
+  },
+  "homepage": "https://github.com/AssisRaphael/medical_clinic_website#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.5.0",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
