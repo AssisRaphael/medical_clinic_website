@@ -5,11 +5,11 @@
 const express = require('express')
 const rotas = express.Router()
 //const path = require('path');
-const database = require('../models/database');
+//const database = require('../models/database');
 
 //Página inicial do site
 rotas.get('/', (req,res) => {
-    res.render('index');
+    res.render('home');
 })
 
 rotas.get('/contato', (req,res) => {
@@ -20,6 +20,7 @@ rotas.get('/sobre', (req,res) => {
     res.render('sobre');
 })
 
+/*
 rotas.get('/apartamentos', function(req, res){
     database.Apartamentos.findAll().then(function(apartamentos){
          res.render('home',{imovel: apartamentos})
@@ -104,6 +105,6 @@ rotas.get('/cadastrar-imovel',function(req, res){
      })  
  })
 
-
+*/
 
 module.exports = rotas
