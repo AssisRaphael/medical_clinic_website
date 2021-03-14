@@ -20,6 +20,10 @@ rotas.get('/sobre', (req,res) => {
     res.render('sobre');
 })
 
+rotas.get('/clinicas', (req,res) => {
+    res.render('clinicas');
+})
+
 /*
 rotas.get('/apartamentos', function(req, res){
     database.Apartamentos.findAll().then(function(apartamentos){
