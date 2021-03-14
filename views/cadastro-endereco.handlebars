@@ -1,0 +1,39 @@
+<div style="margin-bottom: 5px;border: 40px solid rgba(0, 0, 0, 0.9);"></div>
+
+<div style="padding: 25px;">
+    <form action="/add-endereco" method="POST">
+    <h3>Cadastre se endereço aqui</h3>
+    <div class="mb-3">
+        <label for="username" class="form-label">Digite seu nome completo</label>
+        <input type="text" class="form-control" id="nome" name="nome">
+    </div>
+    <div class="mb-3">
+        <label for="usercpf" class="form-label">Digite seu CPF</label>
+        <input type="text" class="form-control" id="usercpf" name="cpf" aria-describedby="usercpf">
+        <div id="usercpf" class="form-text">Informe apenas os números do CPF, sem pontuações.</div>
+    </div>
+    <div class="mb-3">
+        <label for="usercep" class="form-label">Digite seu CEP</label>
+        <input type="text" class="form-control" id="usercep" name="cep" aria-describedby="usercep">
+        <div id="usercep" class="form-text">Digite apenas os digitos do cep, sem pontuações.</div>
+    </div>
+    <div class="mb-3">
+        <label for="userlogradouro" class="form-label">Digite seu logradouro</label>
+        <input type="text" class="form-control" id="userlogradouro" name="logradouro" aria-describedby="userlogradouro">
+        <div id="userlogradouro" class="form-text">Exemplo: Rua Amélia Torres, Avenida Teresa Cristina.</div>
+    </div>
+    <div class="mb-3">
+        <label for="userbairro" class="form-label">Digite seu bairro</label>
+        <input type="text" class="form-control" id="userbairro" name="bairro">
+    </div>
+    <div class="mb-3">
+        <label for="usercidade" class="form-label">Informe sua cidade</label>
+        <input type="text" class="form-control" id="usercidade" name="cidade">
+    </div>
+    <div class="mb-3">
+        <label for="userestado" class="form-label">Informe seu estado</label>
+        <input type="text" class="form-control" id="userestado" name="estado">
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>

@@ -5,8 +5,10 @@
  * ELE IRA APAGAR TODOS OS DADOS DO BANCO DE DADOS E RECRIAR AS TABELAS.
  */
 
-const database = require('./database');
+ const database = require('./database');
 
-database.Usuarios.sync({force: true})
-database.Apartamentos.sync({force: true})
-database.Casas.sync({force: true})
+ database.Agendas.sync({force: true})
+ database.Enderecos.sync({force: true})
+ database.Funcionarios.sync({force: true})
+ database.Medicos.sync({force: true})
+ database.Pacientes.sync({force: true})
