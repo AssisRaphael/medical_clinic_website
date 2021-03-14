@@ -6,13 +6,54 @@ Retorna um objeto com as tabelas.
 const database = require('./bd');
 const Sequelize = database.Sequelize;
 
-const Usuarios = database.sequelize.define('usuarios',{
+const Enderecos = database.sequelize.define('enderecos',{
+    nome: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
     cpf: {
         type: Sequelize.STRING,
         allowNull: false,
         primaryKey: true
     },
+    logradouro: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    bairro: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    cidade: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    estado: {
+        type: Sequelize.STRING,
+        allowNull: false
+    }
+})
+
+const Agendas = database.sequelize.define('agendas',{
+    codigo: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        allowNull: false,
+        primaryKey: true
+    },
+    data: {
+        type: Sequelize.DATE,
+        allowNull: false,
+    },
+    horario: {
+        type: Sequelize.TIME,
+        allowNull: false
+    },
     nome: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    email: {
         type: Sequelize.STRING,
         allowNull: false
     },
@@ -20,35 +61,28 @@ const Usuarios = database.sequelize.define('usuarios',{
         type: Sequelize.STRING,
         allowNull: false
     },
-    renda: {
+    codigo_medico: {
         type: Sequelize.INTEGER,
-        allowNull: false
-    },
-    senha: {
-        type: Sequelize.STRING,
         allowNull: false
     }
 })
 
-const Apartamentos = database.sequelize.define('apartamentos', {
-    id: {
+const Funcionarios = database.sequelize.define('funcionarios', {
+    codigo: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },
-    titulo: {
+    nome: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    descricao: {
+    email: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    comodidades: {
-        type: Sequelize.STRING
-    },
-    endereco: {
+    telefone: {
         type: Sequelize.STRING,
         allowNull: false
     },
@@ -56,59 +90,52 @@ const Apartamentos = database.sequelize.define('apartamentos', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    num_quartos: {
+    logradouro: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    bairro: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    cidade: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    estado: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    data_contrato: {
+        type: Sequelize.DATE,
+        allowNull: false
+    },
+    salario: {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    num_banheiro: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-    },
-    num_garagem: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-    },
-    area: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-    },
-    aluguel: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-    },
-    condominio: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-    },
-    iptu: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-    },
-    imagem: {
+    senha_hash: {
         type: Sequelize.STRING,
         allowNull: false
     }
 })
 
-const Casas = database.sequelize.define('casas', {
-    id: {
+const Medicos = database.sequelize.define('medicos', {
+    codigo: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },
-    titulo: {
+    nome: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    descricao: {
+    email: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    comodidades: {
-        type: Sequelize.STRING
-    },
-    endereco: {
+    telefone: {
         type: Sequelize.STRING,
         allowNull: false
     },
@@ -116,42 +143,113 @@ const Casas = database.sequelize.define('casas', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    num_quartos: {
+    logradouro: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    bairro: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    cidade: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    estado: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    data_contrato: {
+        type: Sequelize.DATE,
+        allowNull: false
+    },
+    salario: {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    num_banheiro: {
+    senha_hash: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    especialidade: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    crm: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+    }
+})
+
+const Pacientes = database.sequelize.define('pacientes', {
+    codigo: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        allowNull: false,
+        primaryKey: true
+    },
+    nome: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    email: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    telefone: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    cep: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    logradouro: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    bairro: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    cidade: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    estado: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    data_contrato: {
+        type: Sequelize.DATE,
+        allowNull: false
+    },
+    salario: {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    num_garagem: {
+    senha_hash: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    peso: {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    area: {
+    altura: {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    aluguel: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-    },
-    condominio: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-    },
-    iptu: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-    },
-    imagem: {
+    tipo_sanquineo: {
         type: Sequelize.STRING,
         allowNull: false
     }
 })
 
 module.exports = {
-    Usuarios,
-    Apartamentos,
-    Casas
+    Agendas,
+    Enderecos,
+    Funcionarios,
+    Medicos,
+    Pacientes
 }
