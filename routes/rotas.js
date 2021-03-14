@@ -5,7 +5,7 @@
 const express = require('express')
 const rotas = express.Router()
 //const path = require('path');
-//const database = require('../models/database');
+const database = require('../models/database');
 
 //Página inicial do site
 rotas.get('/', (req,res) => {
