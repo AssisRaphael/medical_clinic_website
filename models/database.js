@@ -246,10 +246,24 @@ const Pacientes = database.sequelize.define('pacientes', {
     }
 })
 
+const Especialidades = database.sequelize.define('especialidades',{
+    codigo: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        allowNull: false,
+        primaryKey: true
+    },
+    nome: {
+        type: Sequelize.STRING,
+        allowNull: false
+    }
+})
+
 module.exports = {
     Agendas,
     Enderecos,
     Funcionarios,
     Medicos,
-    Pacientes
+    Pacientes,
+    Especialidades
 }

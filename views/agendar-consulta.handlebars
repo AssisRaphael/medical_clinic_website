@@ -1,0 +1,70 @@
+<div style="margin-bottom: 0px;border: 40px solid rgba(0, 0, 0, 0.9);"></div>
+
+<div style="padding: 25px;">
+    <form action="/add-endereco" method="POST" style="margin-bottom: 0px;">
+        <h3>Agende sua consulta aqui</h3>
+        <div class="mb-3">
+            <label for="username" class="form-label">Selecione a clinica que deseja realizar o exame</label>
+            <select class="form-select" name="unidade">
+                <option value="1" selected>Unidade de Belo Horizonte</option>
+                <option value="2">Unidade São Paulo</option>
+                <option value="3">Unidade Rio de Janeiro</option>
+                <option value="4">Unidade Salvador</option>
+                <option value="5">Unidade Ceará</option>
+                <option value="6">Unidade Rio Grande do Sul</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">Selecione a especialidade médica da consulta</label>
+            <select class="form-select" name="area">
+                <option value="1" selected>Radiologia</option>
+                <option value="2">Oftalmologia</option>
+                <option value="3">Oncologia</option>
+                <option value="4">Dermatologia</option>
+                <option value="5">Gastroenterologia</option>
+                <option value="6">Epidemiologia</option>
+                <option value="7">Hematologia e Hemoterapia</option>
+                <option value="8">Neurologia</option>
+                <option value="9">Urologia</option>
+                <option value="10">Medicina do Trabalho</option>
+                <option value="11">Toxicologia</option>
+                <option value="12">Infectologia</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="usercpf" class="form-label">Selecione o médico da consulta</label>
+            <select class="form-select" name="medico">
+                <option value="1" selected>Dr. Sophia Lara Elisa Assunção</option>
+                <option value="2">Dr. Renato Henrique Manoel Araújo</option>
+                <option value="3">Dr. Matheus Ruan Gael da Paz</option>
+                <option value="4">Dr. Samuel Roberto Castr</option>
+                <option value="5">Dr. Lucca Julio Anthony das Neves</option>
+                <option value="6">Dr. Luna Carla Ferreira</option>
+                <option value="7">Dr. Beatriz Eliane Tatiane Martins</option>
+                <option value="8">Dr. Guilherme Isaac Ramos</option>
+                <option value="9">Dr. Augusto Hugo Sales</option>
+                <option value="10">Dr. Thiago Lucca Samuel Galvão</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="usercep" class="form-label">Selecione uma data para a consulta</label>
+            <input type="date" class="form-control" id="usercep" name="data">
+        </div>
+        <div class="mb-3">
+            <label for="userlogradouro" class="form-label">Selecione um horário para a consulta</label>
+            <select class="form-select" name="medico">
+                <option value="1" selected>8:00</option>
+                <option value="2">9:00</option>
+                <option value="3">10:00</option>
+                <option value="4">11:00</option>
+                <option value="5">12:00</option>
+                <option value="6">13:00</option>
+                <option value="7">14:00</option>
+                <option value="8">15:00</option>
+                <option value="9">16:00</option>
+                <option value="10">17:00</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>

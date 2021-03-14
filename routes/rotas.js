@@ -32,6 +32,10 @@ rotas.get('/cadastro-endereco', (req,res) => {
     res.render('cadastro-endereco');
 })
 
+rotas.get('/agendar-consulta', (req,res) => {
+    res.render('agendar-consulta');
+})
+
 rotas.post('/add-endereco',function(req, res){
     database.Enderecos.create({
         nome: req.body.nome,
