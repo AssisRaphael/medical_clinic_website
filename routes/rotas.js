@@ -16,6 +16,10 @@ rotas.get('/contato', (req,res) => {
     res.render('contato');
 })
 
+rotas.get('/login', (req,res) => {
+    res.render('login');
+})
+
 rotas.get('/sobre', (req,res) => {
     res.render('sobre');
 })

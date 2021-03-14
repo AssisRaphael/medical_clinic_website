@@ -1,0 +1,48 @@
+<div style="margin-bottom: 5px;border: 40px solid rgba(0, 0, 0, 0.9);"></div>
+
+
+<div class="paginaLogin" style="paginaLogin">
+  <div class="card cardLogin" style="width: 18rem;">
+    <img src="./imgs/loginUser.png" class="card-img-top">
+    <div class="card-body">
+      <form action="/add-endereco" method="POST">
+        <h3>Login</h3>
+        <div class="mb-3">
+          <label for="username" class="form-label">E-mail</label>
+          <input type="text" class="form-control" id="nome" name="email">
+        </div>
+        <div class="mb-3">
+          <label for="usercpf" class="form-label">Senha</label>
+          <input type="password" class="form-control" id="usercpf" name="senha">
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+  .paginaLogin {
+    background-image: url("./imgs/loginPhoto.jpg");
+    min-height: 800px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  .cardLogin {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    margin-right: -50%;
+    min-width: 400px;
+  }
+
+  .paginaLogin img {
+    max-height: 100px;
+    max-width: 100px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+</style>
