@@ -1,8 +1,20 @@
 <div style="margin-bottom: 0px;border: 40px solid rgba(0, 0, 0, 0.9);"></div>
 
 <div style="padding: 25px;">
-    <form action="/add-endereco" method="POST" style="margin-bottom: 0px;">
+    <form action="/add-consulta" method="POST" style="margin-bottom: 0px;">
         <h3>Agende sua consulta aqui</h3>
+        <div class="mb-3">
+            <label for="usercep" class="form-label">Informe seu nome</label>
+            <input type="text" class="form-control" id="usercep" name="nome">
+        </div>
+        <div class="mb-3">
+            <label for="usercep" class="form-label">Informe seu telefone</label>
+            <input type="text" class="form-control" id="usercep" name="telefone">
+        </div>
+        <div class="mb-3">
+            <label for="usercep" class="form-label">Informe seu email</label>
+            <input type="text" class="form-control" id="usercep" name="email">
+        </div>
         <div class="mb-3">
             <label for="username" class="form-label">Selecione a clinica que deseja realizar o exame</label>
             <select class="form-select" name="unidade">
@@ -16,7 +28,7 @@
         </div>
         <div class="mb-3">
             <label for="username" class="form-label">Selecione a especialidade médica da consulta</label>
-            <select class="form-select" name="area">
+            <select class="form-select" name="especialidade">
                 <option value="1" selected>Radiologia</option>
                 <option value="2">Oftalmologia</option>
                 <option value="3">Oncologia</option>
@@ -37,7 +49,7 @@
                 <option value="1" selected>Dr. Sophia Lara Elisa Assunção</option>
                 <option value="2">Dr. Renato Henrique Manoel Araújo</option>
                 <option value="3">Dr. Matheus Ruan Gael da Paz</option>
-                <option value="4">Dr. Samuel Roberto Castr</option>
+                <option value="4">Dr. Samuel Roberto Castro</option>
                 <option value="5">Dr. Lucca Julio Anthony das Neves</option>
                 <option value="6">Dr. Luna Carla Ferreira</option>
                 <option value="7">Dr. Beatriz Eliane Tatiane Martins</option>
@@ -52,17 +64,17 @@
         </div>
         <div class="mb-3">
             <label for="userlogradouro" class="form-label">Selecione um horário para a consulta</label>
-            <select class="form-select" name="medico">
-                <option value="1" selected>8:00</option>
-                <option value="2">9:00</option>
-                <option value="3">10:00</option>
-                <option value="4">11:00</option>
-                <option value="5">12:00</option>
-                <option value="6">13:00</option>
-                <option value="7">14:00</option>
-                <option value="8">15:00</option>
-                <option value="9">16:00</option>
-                <option value="10">17:00</option>
+            <select class="form-select" name="horario">
+                <option value="08:00:00.0000000" selected>8:00</option>
+                <option value="09:00:00.0000000">9:00</option>
+                <option value="10:00:00.0000000">10:00</option>
+                <option value="11:00:00.0000000">11:00</option>
+                <option value="12:00:00.0000000">12:00</option>
+                <option value="13:00:00.0000000">13:00</option>
+                <option value="14:00:00.0000000">14:00</option>
+                <option value="15:00:00.0000000">15:00</option>
+                <option value="16:00:00.0000000">16:00</option>
+                <option value="17:00:00.0000000">17:00</option>
             </select>
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>
