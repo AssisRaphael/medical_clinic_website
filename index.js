@@ -4,6 +4,7 @@ const cors = require('cors')
 const routes = require('./routes/rotas')
 const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser');
 
 const app = express()
 
@@ -24,6 +25,8 @@ app.set('view engine','handlebars')
     //Body Parser
     app.use(bodyParser.urlencoded({extended: false}))
     app.use(bodyParser.json())
+    //Cookie Parser
+    app.use(cookieParser());
     //Rotas
     app.use(routes)
     app.use(express.static('views'));
