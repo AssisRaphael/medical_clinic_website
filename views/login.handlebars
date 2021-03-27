@@ -8,13 +8,13 @@
         <h3>Login</h3>
         <div class="mb-3">
           <label for="username" class="form-label">E-mail</label>
-          <input type="text" class="form-control" id="nome" name="email">
+          <input type="text" class="form-control form-login" id="nome" name="email">
         </div>
         <div class="mb-3">
           <label for="usercpf" class="form-label">Senha</label>
-          <input type="password" class="form-control" id="usercpf" name="senha">
+          <input type="password" class="form-control form-login" id="usercpf" name="senha">
         </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="submit" class="btn btn-primary botao-entrar" >Enviar</button>
       </form>
     </div>
   </div>
@@ -29,6 +29,7 @@
   }
 
   .cardLogin {
+    border-radius: 20px;
     margin: 0px;
     position: absolute;
     top: 20%;
@@ -44,5 +45,15 @@
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
+  }
+
+  .form-login{
+    border-radius: 20px;
+  }
+
+  .botao-entrar{
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 20px;
   }
 </style>
