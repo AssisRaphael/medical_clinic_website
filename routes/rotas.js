@@ -7,14 +7,13 @@ const rotas = express.Router()
 const database = require('../models/database');
 const db = require('../models/bd');
 
-const cookies = [];
-
 hashCode = function(s){
     return s.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0);              
 }
 
 //Página inicial do site
 rotas.get('/', (req,res) => {
+    console.log(req.session);
     res.render('home');
 })
 
@@ -23,7 +22,11 @@ rotas.get('/contato', (req,res) => {
 })
 
 rotas.get('/login', (req,res) => {
-    res.render('login');
+    if(req.session.isAuth){
+        res.render('admin');
+    } else {
+        res.render('login');
+    }
 })
 
 rotas.get('/sobre', (req,res) => {
@@ -32,6 +35,10 @@ rotas.get('/sobre', (req,res) => {
 
 rotas.get('/clinicas', (req,res) => {
     res.render('clinicas');
+})
+
+rotas.get('/nossa-equipe', (req,res) => {
+    res.render('nossa-equipe');
 })
 
 rotas.get('/cadastro-endereco', (req,res) => {
@@ -48,6 +55,19 @@ rotas.get('/cadastro-funcionarios', (req,res) => {
     }else{
         res.render('home');
     }  
+})
+
+rotas.get('/admin',(req,res) => {
+    if(req.session.isAuth){
+        res.render('admin');
+    } else {
+        res.render('login');
+    }
+})
+
+rotas.get('/logout',(req,res) => {
+    req.session.isAuth = false;
+    res.redirect('/');
 })
 
 rotas.post('/add-consulta',(req,res) => {
@@ -103,17 +123,6 @@ rotas.post('/add-endereco',function(req, res){
     }
 })
 
-function validateCookie(req,res, next){
-    const cookie = req;
-    if('session_login' in cookies){
-        console.log('Usuário logado!');
-        next();
-    } else{
-        console.log(`cookies: ${cookies}\n`);
-        res.status(403).send("Usuário não cadastrado");
-    }
-}
-
 rotas.post('/login',(req,res) => {
     const hash = hashCode(req.body.senha);
     const login = req.body.email;
@@ -125,21 +134,17 @@ rotas.post('/login',(req,res) => {
               }
         }).then(function verificaLogin(funcionarios){  
             if(funcionarios.length > 0){
-                res.cookie('session_login',login);
-                cookies.push(login);
+                req.session.isAuth = true;
+                console.log(`sension id: ${req.session.id}`);
                 res.render('admin');
             }
             else{
-                res.send('Usuário ou senha inválido!');
+                res.render('login',{loginError: true});
             }
         });
     } catch (error) {
         console.log("#Error: "+error);
     } 
-})
-
-rotas.get('/admin',validateCookie,(req,res) => {
-    res.render('sobre');
 })
 
 module.exports = rotas

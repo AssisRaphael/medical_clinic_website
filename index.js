@@ -5,8 +5,9 @@ const routes = require('./routes/rotas')
 const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser');
+const session = require('express-session');
 
-const app = express()
+const app = express();
 
 // Configura a porta da aplicação
 porta = process.env.PORT || 21262;
@@ -27,6 +28,12 @@ app.set('view engine','handlebars')
     app.use(bodyParser.json())
     //Cookie Parser
     app.use(cookieParser());
+    //Express session
+    app.use(session({
+        secret: 'DgE1cYgAYP8hAHo',
+        resave: false,
+        saveUninitialized: false
+    }));
     //Rotas
     app.use(routes)
     app.use(express.static('views'));
