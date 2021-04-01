@@ -156,7 +156,7 @@ const _medicos = [
 function CadatsraMedicos() {
     console.log("hehe")
     for (medicos of _medicos) {
-        console.log("****"+medicos)
+        console.log("****" + medicos)
         database.Medicos.create({
             nome: medicos.nome,
             email: medicos.email,
@@ -179,4 +179,25 @@ function CadatsraMedicos() {
     }
 }
 
+function CadatsraFuncionario() {
+    database.Funcionarios.create({
+        nome: "Funcionário master",
+        email: "funcionariomaster@zizimed.com",
+        telefone: "553198563214",
+        cep: 79270971,
+        logradouro: "Rua Principal, s/n",
+        bairro: "Centro",
+        cidade: "Caracol",
+        estado: "MS",
+        data_contrato: new Date("December 1, 2000 03:24:00"),
+        salario: 2500,
+        senha_hash: 1251475389,
+    }).then(function () {
+        console.log(`sucesso`)
+    }).catch(function (erro) {
+        console.log(`---- ERRO` + erro)
+    })
+}
+
+CadatsraFuncionario();
 //CadatsraMedicos();
