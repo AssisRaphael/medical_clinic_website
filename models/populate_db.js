@@ -199,5 +199,5 @@ function CadatsraFuncionario() {
     })
 }
 
-CadatsraFuncionario();
-//CadatsraMedicos();
+//CadatsraFuncionario();
+CadatsraMedicos();

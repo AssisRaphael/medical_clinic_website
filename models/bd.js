@@ -5,7 +5,7 @@ Sequelize: Módulo sequelize. Possui o construtuor, defines e functions do módu
 */ 
 
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('zizi_med','root','40028922', {host:"localhost",dialect:"mysql"});
+const sequelize = new Sequelize('zizi_med','root','123456', {host:"localhost",dialect:"mysql"});
 
 module.exports = {
     Sequelize: Sequelize,
