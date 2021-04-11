@@ -3,41 +3,41 @@
 <div style="padding: 25px;">
     {{#if sucess}}
     <div class="alert alert-success" role="alert" style="margin-top: 25px;margin-bottom: 25px">
-        Funcionário cadastrado com sucesso!
+        Paciente cadastrado com sucesso!
     </div>
     {{/if}}
-    <form action="/add-funcionario" method="POST" style="margin-bottom: 0px;">
-        <h3>Cadastro de Funcionário</h3>
+    <form action="/add-paciente" method="POST" style="margin-bottom: 0px;">
+        <h3>Cadastro de pacientes</h3>
         <div class="mb-3">
-            <label class="form-label">Informe o nome do funcionário</label>
+            <label class="form-label">Informe o nome do paciente</label>
             <input type="text" class="form-control" name="nome">
         </div>
         <div class="mb-3">
-            <label  class="form-label">Informe o telefone do funcionario</label>
+            <label  class="form-label">Informe o telefone do paciente</label>
             <input type="text" class="form-control" name="telefone">
         </div>
         <div class="mb-3">
-            <label class="form-label">Informe o email do funcionário</label>
+            <label class="form-label">Informe o email do paciente</label>
             <input type="text" class="form-control" name="email">
         </div>
         <div class="mb-3">
-            <label class="form-label">Informe o CEP do funcionário</label>
+            <label class="form-label">Informe o CEP do paciente</label>
             <input type="text" class="form-control" name="cep">
         </div>
         <div class="mb-3">
-            <label class="form-label">Informe o logradouro do funcionário</label>
+            <label class="form-label">Informe o logradouro do paciente</label>
             <input type="text" class="form-control" name="logradouro">
         </div>
         <div class="mb-3">
-            <label class="form-label">Informe o bairro do funcionário</label>
+            <label class="form-label">Informe o bairro do paciente</label>
             <input type="text" class="form-control" name="bairro">
         </div>
         <div class="mb-3">
-            <label class="form-label">Informe a cidade do funcionário</label>
+            <label class="form-label">Informe a cidade do paciente</label>
             <input type="text" class="form-control" name="cidade">
         </div>    
         <div class="mb-3">
-            <label class="form-label">Selecione o estado do funcionário</label>
+            <label class="form-label">Selecione o estado do paciente</label>
             <select class="form-select" name="estado">
                 <option value="AC" selected>Acre</option>
                 <option value="AL">Alagoas</option>
@@ -69,16 +69,16 @@
             </select>
         </div>
        <div class="mb-3">
-            <label class="form-label">Informe a data de contrato do funcionário</label>
-            <input type="date" class="form-control" name="data_contrato">
+            <label class="form-label">Informe o peso do paciente</label>
+            <input type="number" class="form-control" name="peso">
         </div> 
         <div class="mb-3">
-            <label class="form-label">Informe o salario do funcionário</label>
-            <input type="number" class="form-control" name="salario">
+            <label class="form-label">Informe a altura do paciente</label>
+            <input type="number" class="form-control" name="altura">
         </div>
         <div class="mb-3">
-            <label class="form-label">Informe a senha do funcionário</label>
-            <input type="password" class="form-control" name="senha">
+            <label class="form-label">Informe o tipo sanguíneo do paciente</label>
+            <input type="text" class="form-control" name="tipo_sanguineo">
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>

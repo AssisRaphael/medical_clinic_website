@@ -1,6 +1,19 @@
 <div style="margin-bottom: 0px;border: 40px solid rgba(0, 0, 0, 0.9);"></div>
 
 <div style="padding: 25px;">
+
+    {{#if consulta.error}}
+    <div class="alert alert-danger" role="alert" style="margin-top: 25px;margin-bottom: 25px">
+        Já existe uma consulta agendada nesse dia e horário, selecione outro horário, médico ou data.
+    </div>
+    {{/if}}
+
+    {{#if consulta.sucess}}
+    <div class="alert alert-success" role="alert" style="margin-top: 25px;margin-bottom: 25px">
+        Consulta agendada com sucesso!
+    </div>
+    {{/if}}
+
     <form action="/add-consulta" method="POST" style="margin-bottom: 0px;">
         <h3>Agende sua consulta aqui</h3>
         <div class="mb-3">

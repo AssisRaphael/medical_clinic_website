@@ -1,6 +1,6 @@
 <div style="margin-bottom: 0px;border: 40px solid rgba(0, 0, 0, 0.9);"></div>
 
-<div class="paginaLogin" style="paginaLogin">
+<div class="paginaLogin">
   <div class="card cardLogin">
     <img src="./imgs/loginUser.png" class="card-img-top">
     <div class="card-body">
@@ -15,21 +15,23 @@
           <label for="usercpf" class="form-label">Senha</label>
           <input type="password" class="form-control form-login" id="usercpf" name="senha">
         </div>
-        <button type="submit" class="btn btn-primary botao-entrar" >Enviar</button>
+        <button type="submit" class="btn btn-primary botao-entrar">Enviar</button>
+
+        {{#if loginError}}
+        <div class="alert alert-danger" role="alert" style="margin-top: 25px;margin-bottom: 25px">
+          O e-mail ou a senha são inválidos, tente novamente!
+        </div>
+        {{/if}}
       </form>
     </div>
   </div>
-  {{#if loginError}}
-    <div class="alert alert-danger" role="alert">
-      O e-mail ou a senha são inválidos, tente novamente!
-    </div>
-  {{/if}}
+
 </div>
 
 <style>
   .paginaLogin {
     background-image: url("./imgs/loginPhoto.jpg");
-    min-height: 515px;
+    min-height: 535px;
     background-repeat: no-repeat;
     background-size: 100%;
   }
@@ -53,13 +55,32 @@
     margin-bottom: 10px;
   }
 
-  .form-login{
+  .form-login {
     border-radius: 20px;
   }
 
-  .botao-entrar{
+  .botao-entrar {
     margin-right: auto;
     margin-left: auto;
     border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
 </style>
+
+{{#if loginError}}
+<style>
+  .cardLogin {
+    top: 20% !important;
+  }
+
+  .paginaLogin {
+    min-height: 600px !important;
+  }
+
+  .paginaLogin img {
+    max-height: 80px !important;
+    max-width: 80px !important;
+  }
+</style>
+{{/if}}

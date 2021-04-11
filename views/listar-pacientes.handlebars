@@ -1,0 +1,55 @@
+<div style="margin-bottom: 0px;border: 40px solid rgba(0, 0, 0, 0.9);"></div>
+
+<div class="principal">
+    <h1>Lista de Pacientes</h1>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Peso</th>
+                <th scope="col">Altura</th>
+                <th scope="col">Tipo Sanguíneo</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">CEP</th>
+                <th scope="col">Endereço</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each pacientes}}
+            <tr>
+                <td>{{dataValues.codigo}}</td>
+                <td>{{dataValues.nome}}</td>
+                <td>{{dataValues.email}}</td>
+                <td>{{dataValues.peso}}</td>
+                <td>{{dataValues.altura}}</td>
+                <td>{{dataValues.tipo_sanguineo}}</td>      
+                <td>{{dataValues.telefone}}</td>
+                <td>{{dataValues.cep}}</td>
+                <td>{{dataValues.logradouro}}, {{dataValues.bairro}}, {{dataValues.cidade}} - {{dataValues.estado}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .principal {
+        max-width: 1400px;
+        min-height: 515px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        text-align: center;
+    }
+
+    .principal h1 {
+        margin-bottom: 25px;
+    }
+
+    .horario {
+        display: inline;
+    }
+</style>

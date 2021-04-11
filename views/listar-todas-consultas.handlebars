@@ -1,0 +1,47 @@
+<div style="margin-bottom: 0px;border: 40px solid rgba(0, 0, 0, 0.9);"></div>
+
+<div class="principal">
+    <h1>Lista de Consultas agendadas</h1>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Paciente</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Data</th>
+                <th scope="col">Horário</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each agendas}}
+            <tr>
+                <td>{{dataValues.nome}}</td>
+                <td>{{dataValues.telefone}}</td>
+                <td>{{dataValues.email}}</td>
+                <td>{{dataValues.data}}</td>
+                <td>{{dataValues.horario}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .principal {
+        max-width: 1400px;
+        min-height: 515px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        text-align: center;
+    }
+
+    .principal h1 {
+        margin-bottom: 25px;
+    }
+
+    .horario {
+        display: inline;
+    }
+</style>

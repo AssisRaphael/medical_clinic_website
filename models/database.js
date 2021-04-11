@@ -7,14 +7,9 @@ const database = require('./bd');
 const Sequelize = database.Sequelize;
 
 const Enderecos = database.sequelize.define('enderecos',{
-    nome: {
+    cep: {
         type: Sequelize.STRING,
         allowNull: false
-    },
-    cpf: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        primaryKey: true
     },
     logradouro: {
         type: Sequelize.STRING,
@@ -42,11 +37,11 @@ const Agendas = database.sequelize.define('agendas',{
         primaryKey: true
     },
     data: {
-        type: Sequelize.DATE,
+        type: Sequelize.STRING,
         allowNull: false,
     },
     horario: {
-        type: Sequelize.TIME,
+        type: Sequelize.STRING,
         allowNull: false
     },
     nome: {
@@ -107,7 +102,7 @@ const Funcionarios = database.sequelize.define('funcionarios', {
         allowNull: false
     },
     data_contrato: {
-        type: Sequelize.DATE,
+        type: Sequelize.STRING,
         allowNull: false
     },
     salario: {
@@ -160,7 +155,7 @@ const Medicos = database.sequelize.define('medicos', {
         allowNull: false
     },
     data_contrato: {
-        type: Sequelize.DATE,
+        type: Sequelize.STRING,
         allowNull: false
     },
     salario: {
@@ -220,18 +215,6 @@ const Pacientes = database.sequelize.define('pacientes', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    data_contrato: {
-        type: Sequelize.DATE,
-        allowNull: false
-    },
-    salario: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-    },
-    senha_hash: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
     peso: {
         type: Sequelize.INTEGER,
         allowNull: false
@@ -240,7 +223,7 @@ const Pacientes = database.sequelize.define('pacientes', {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    tipo_sanquineo: {
+    tipo_sanguineo: {
         type: Sequelize.STRING,
         allowNull: false
     }
