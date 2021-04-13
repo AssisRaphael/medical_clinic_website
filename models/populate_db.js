@@ -1,6 +1,6 @@
 const database = require('./database');
 
-hashCode = function (s) {
+const hashCode = function (s) {
     return s.split("").reduce(function (a, b) { a = ((a << 5) - a) + b.charCodeAt(0); return a & a }, 0);
 }
 
@@ -158,7 +158,7 @@ const _medicos = [
 ];
 
 function CadastrarMedicos() {
-    for (medico of _medicos) {
+    for (let medico of _medicos) {
         console.log("****" + medico)
         database.Medicos.create({
             nome: medico.nome,
