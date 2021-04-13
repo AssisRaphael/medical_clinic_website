@@ -2,24 +2,6 @@
 
 <div class="principal">
     <h1>Lista de Consultas</h1>
-    <form action="/get-agendas" method="POST" style="margin-bottom: 0px;">
-        <div class="mb-3">
-            <label for="usercpf" class="form-label">Selecione o nome do médico para ver as consultas agendadas</label>
-            <select class="form-select" name="medico">
-                <option value="1" selected>Dr. Sophia Lara Elisa Assunção</option>
-                <option value="2">Dr. Renato Henrique Manoel Araújo</option>
-                <option value="3">Dr. Matheus Ruan Gael da Paz</option>
-                <option value="4">Dr. Samuel Roberto Castro</option>
-                <option value="5">Dr. Lucca Julio Anthony das Neves</option>
-                <option value="6">Dr. Luna Carla Ferreira</option>
-                <option value="7">Dr. Beatriz Eliane Tatiane Martins</option>
-                <option value="8">Dr. Guilherme Isaac Ramos</option>
-                <option value="9">Dr. Augusto Hugo Sales</option>
-                <option value="10">Dr. Thiago Lucca Samuel Galvão</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
     {{#if agendas}}
     <table class="table table-hover">
         <thead>

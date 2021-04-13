@@ -1,8 +1,16 @@
 <div style="border: 40px solid rgba(0, 0, 0, 0.9);"></div>
 
 <div class="paginaLogin" style="paginaLogin">
-    <div class="card cardLogin">
+    <div class="card cardLogin card-admin">
         <img src="./imgs/zizimed_logo.png" class="card-img-top">
+        <h1>
+            {{#if funcionario}}
+                {{funcionario.nome}}
+            {{/if}}
+            {{#if medico}}
+                {{medico.nome}}
+            {{/if}}
+        </h1>
         <div class="card-body">
             <nav class="nav flex-column">
                 <a class="nav-link" href="/cadastrar-funcionario">Cadastrar funcionários da clínica</a>
@@ -10,8 +18,10 @@
                 <a class="nav-link" href="/listar-funcionarios">Listar funcionários cadastrados</a>
                 <a class="nav-link" href="/listar-pacientes">Listar pacientes cadastrados</a>
                 <a class="nav-link" href="/listar-enderecos">Listar endereços cadastrados</a>
-                <a class="nav-link" href="/listar-consultas">Listar consultas agendadas por médico</a>
                 <a class="nav-link" href="/listar-todas-consultas">Listar agendamentos de consultas</a>
+                {{#if medico}}
+                    <a class="nav-link" href="/listar-consultas">Listar suas consultas agendadas</a>
+                {{/if}}
             </nav>
             <a href="/logout"><button type="button" class="btn btn-primary">Sair</button></a>
         </div>
@@ -36,7 +46,7 @@
         margin-right: -50%;
         min-width: 600px;
         width: 18rem;
-        background-color: rgba(10,23,55,0);
+        background-color: rgba(10, 23, 55, 0);
         border: 0px;
         font-size: large;
     }
@@ -47,5 +57,10 @@
         margin: auto;
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+
+    .card-admin{
+        background: white;
+        border-radius: 20px;
     }
 </style>

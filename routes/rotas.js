@@ -7,7 +7,7 @@ const rotas = express.Router()
 const database = require('../models/database');
 const db = require('../models/bd');
 
-hashCode = function (s) {
+const hashCode = function (s) {
     return s.split("").reduce(function (a, b) { a = ((a << 5) - a) + b.charCodeAt(0); return a & a }, 0);
 }
 
@@ -139,14 +139,20 @@ rotas.get('/listar-enderecos', function (req, res) {
 })
 
 rotas.get('/listar-consultas', function (req, res) {
-    if (req.session.isAuth) {
+    if (req.session.isAuth && req.session.isDoctor) {
         try {
-            res.render('listar-consultas');
+            database.Agendas.findAll({
+                where: {
+                    codigo_medico: req.session.codigo
+                }
+            }).then(function (a) {
+                res.render('listar-consultas', { agendas: a })
+            });  
         } catch (error) {
             console.log("#Error: " + error);
         }
     } else {
-        res.render('login');
+        res.render('admin');
     }
 })
 
@@ -222,19 +228,46 @@ rotas.post('/login', (req, res) => {
     const hash = hashCode(req.body.senha);
     const login = req.body.email;
     try {
-        database.Funcionarios.findAll({
+        const func = database.Funcionarios.findAll({
             where: {
                 email: req.body.email,
                 senha_hash: hash
             }
-        }).then(function verificaLogin(funcionarios) {
+        });
+        
+        const meds = database.Medicos.findAll({
+            where: {
+                email: req.body.email,
+                senha_hash: hash
+            }
+        });
+
+        func.then(function verificaLogin(funcionarios) {
             if (funcionarios.length > 0) {
                 req.session.isAuth = true;
-                console.log(`sension id: ${req.session.id}`);
-                res.render('admin');
+                req.session.isDoctor = false;
+                req.session.nome= funcionarios[0].dataValues.nome;
+                res.render('admin', {funcionario: {
+                    isDoctor: false,
+                    nome: funcionarios[0].dataValues.nome,
+                }});
             }
-            else {
-                res.render('login', { loginError: true });
+        });
+
+        meds.then(function verificaLogin(medicos) {
+            if (medicos.length > 0) {
+                req.session.isAuth = true;
+                req.session.isDoctor = true;
+                req.session.codigo = medicos[0].dataValues.codigo;
+                req.session.nome= medicos[0].dataValues.nome;
+                res.render('admin', {medico: {
+                    isDoctor: true,
+                    nome: medicos[0].dataValues.nome,
+                    codigo: medicos[0].dataValues.codigo,
+                }});
+            }
+            else{
+                res.render(login, {loginError: true});
             }
         });
     } catch (error) {
