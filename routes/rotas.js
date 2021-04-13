@@ -99,9 +99,20 @@ rotas.get('/listar-funcionarios', function (req, res) {
 rotas.get('/listar-todas-consultas', function (req, res) {
     if (req.session.isAuth) {
         try {
-            database.Agendas.findAll().then(function (a) {
-                res.render('listar-todas-consultas', { agendas: a })
-            });  
+            let medicos = database.Medicos.findAll();
+            let consulta = database.Agendas.findAll();
+            var nomes = [];
+            medicos.then(function (medicos) {
+                for(medico of medicos){
+                    nomes[medico.dataValues.codigo] = medico.dataValues.nome;
+                }
+                consulta.then((consultas)=>{
+                    for(consulta of consultas){
+                        consulta.nomeMedico = nomes[consulta.dataValues.codigo_medico];
+                    }
+                    res.render('listar-todas-consultas', { agendas: consultas })
+                })
+            });
         } catch (error) {
             console.log("#Error: " + error);
         }
