@@ -7,26 +7,27 @@
     </div>
     {{/if}}
     <form action="/add-endereco" method="POST">
-    <h3>Cadastre o novo endereço aqui</h3>
-    <div class="mb-3">
-        <label for="usercep" class="form-label">Digite o CEP</label>
-        <input type="text" class="form-control" id="usercep" name="cep" aria-describedby="usercep">
-        <div id="usercep" class="form-text">Digite apenas os digitos do cep, sem pontuações.</div>
-    </div>
-    <div class="mb-3">
-        <label for="userlogradouro" class="form-label">Digite o logradouro</label>
-        <input type="text" class="form-control" id="userlogradouro" name="logradouro" aria-describedby="userlogradouro">
-        <div id="userlogradouro" class="form-text">Exemplo: Rua Amélia Torres, Avenida Teresa Cristina.</div>
-    </div>
-    <div class="mb-3">
-        <label for="userbairro" class="form-label">Digite o bairro</label>
-        <input type="text" class="form-control" id="userbairro" name="bairro">
-    </div>
-    <div class="mb-3">
-        <label for="usercidade" class="form-label">Informe a cidade</label>
-        <input type="text" class="form-control" id="usercidade" name="cidade">
-    </div>
-    <div class="mb-3">
+        <h3>Cadastre o novo endereço aqui</h3>
+        <div class="mb-3">
+            <label for="usercep" class="form-label">Digite o CEP</label>
+            <input type="text" class="form-control" id="usercep" name="cep" aria-describedby="usercep">
+            <div id="usercep" class="form-text">Digite apenas os digitos do cep, sem pontuações.</div>
+        </div>
+        <div class="mb-3">
+            <label for="userlogradouro" class="form-label">Digite o logradouro</label>
+            <input type="text" class="form-control" id="userlogradouro" name="logradouro"
+                aria-describedby="userlogradouro">
+            <div id="userlogradouro" class="form-text">Exemplo: Rua Amélia Torres, Avenida Teresa Cristina.</div>
+        </div>
+        <div class="mb-3">
+            <label for="userbairro" class="form-label">Digite o bairro</label>
+            <input type="text" class="form-control" id="userbairro" name="bairro">
+        </div>
+        <div class="mb-3">
+            <label for="usercidade" class="form-label">Informe a cidade</label>
+            <input type="text" class="form-control" id="usercidade" name="cidade">
+        </div>
+        <div class="mb-3">
             <label class="form-label">Selecione o estado</label>
             <select class="form-select" name="estado">
                 <option value="AC" selected>Acre</option>
@@ -58,6 +59,17 @@
                 <option value="TO">Tocantins</option>
             </select>
         </div>
-    <button type="submit" class="btn btn-primary">Enviar</button>
+        <div class="divPai">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <a href="/"><button type="button" class="btn btn-dark">Voltar</button></a>
+        </div>
     </form>
 </div>
+
+<style>
+    .divPai {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+</style>

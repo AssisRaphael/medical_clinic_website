@@ -3,14 +3,11 @@
 <div class="paginaLogin" style="paginaLogin">
     <div class="card cardLogin card-admin">
         <img src="./imgs/zizimed_logo.png" class="card-img-top">
-        <h1>
-            {{#if funcionario}}
-                {{funcionario.nome}}
+        <p style="margin-left: 40px;margin-bottom: 15px;padding-bottom:0px;"> Olá 
+            {{#if session}}
+                {{session.nome}}
             {{/if}}
-            {{#if medico}}
-                {{medico.nome}}
-            {{/if}}
-        </h1>
+        </p>
         <div class="card-body">
             <nav class="nav flex-column">
                 <a class="nav-link" href="/cadastrar-funcionario">Cadastrar funcionários da clínica</a>
@@ -19,11 +16,11 @@
                 <a class="nav-link" href="/listar-pacientes">Listar pacientes cadastrados</a>
                 <a class="nav-link" href="/listar-enderecos">Listar endereços cadastrados</a>
                 <a class="nav-link" href="/listar-todas-consultas">Listar agendamentos de consultas</a>
-                {{#if medico}}
+                {{#if session.isDoctor}}
                     <a class="nav-link" href="/listar-consultas">Listar suas consultas agendadas</a>
                 {{/if}}
             </nav>
-            <a href="/logout"><button type="button" class="btn btn-primary">Sair</button></a>
+            <a href="/logout"><button type="button" class="btn btn-primary" style="margin: 30px 15px;">Sair</button></a>
         </div>
     </div>
 
@@ -32,7 +29,7 @@
 <style>
     .paginaLogin {
         background-image: url("./imgs/loginPhoto.jpg");
-        min-height: 515px;
+        min-height: 700px;
         background-repeat: no-repeat;
         background-size: 100%;
         margin-top: 0px;

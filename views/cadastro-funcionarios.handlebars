@@ -13,7 +13,7 @@
             <input type="text" class="form-control" name="nome">
         </div>
         <div class="mb-3">
-            <label  class="form-label">Informe o telefone do funcionario</label>
+            <label class="form-label">Informe o telefone do funcionario</label>
             <input type="text" class="form-control" name="telefone">
         </div>
         <div class="mb-3">
@@ -35,7 +35,7 @@
         <div class="mb-3">
             <label class="form-label">Informe a cidade do funcionário</label>
             <input type="text" class="form-control" name="cidade">
-        </div>    
+        </div>
         <div class="mb-3">
             <label class="form-label">Selecione o estado do funcionário</label>
             <select class="form-select" name="estado">
@@ -68,10 +68,10 @@
                 <option value="TO">Tocantins</option>
             </select>
         </div>
-       <div class="mb-3">
+        <div class="mb-3">
             <label class="form-label">Informe a data de contrato do funcionário</label>
             <input type="date" class="form-control" name="data_contrato">
-        </div> 
+        </div>
         <div class="mb-3">
             <label class="form-label">Informe o salario do funcionário</label>
             <input type="number" class="form-control" name="salario">
@@ -80,6 +80,17 @@
             <label class="form-label">Informe a senha do funcionário</label>
             <input type="password" class="form-control" name="senha">
         </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <div class="divPai">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <a href="/admin"><button type="button" class="btn btn-dark">Voltar</button></a>
+        </div>
     </form>
 </div>
+
+<style>
+    .divPai {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+</style>

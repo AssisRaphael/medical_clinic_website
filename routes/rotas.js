@@ -23,7 +23,7 @@ rotas.get('/contato', (req, res) => {
 
 rotas.get('/login', (req, res) => {
     if (req.session.isAuth) {
-        res.render('admin');
+        res.render('admin',{session: req.session});
     } else {
         res.render('login');
     }
@@ -67,7 +67,7 @@ rotas.get('/cadastro-pacientes', (req, res) => {
 
 rotas.get('/admin', (req, res) => {
     if (req.session.isAuth) {
-        res.render('admin');
+        res.render('admin',{session: req.session});
     } else {
         res.render('login');
     }
@@ -152,7 +152,7 @@ rotas.get('/listar-consultas', function (req, res) {
             console.log("#Error: " + error);
         }
     } else {
-        res.render('admin');
+        res.render('admin',{session: req.session});
     }
 })
 
@@ -247,10 +247,7 @@ rotas.post('/login', (req, res) => {
                 req.session.isAuth = true;
                 req.session.isDoctor = false;
                 req.session.nome= funcionarios[0].dataValues.nome;
-                res.render('admin', {funcionario: {
-                    isDoctor: false,
-                    nome: funcionarios[0].dataValues.nome,
-                }});
+                res.render('admin', {session: req.session});
             }
         });
 
@@ -260,11 +257,7 @@ rotas.post('/login', (req, res) => {
                 req.session.isDoctor = true;
                 req.session.codigo = medicos[0].dataValues.codigo;
                 req.session.nome= medicos[0].dataValues.nome;
-                res.render('admin', {medico: {
-                    isDoctor: true,
-                    nome: medicos[0].dataValues.nome,
-                    codigo: medicos[0].dataValues.codigo,
-                }});
+                res.render('admin', {session: req.session});
             }
             else{
                 res.render(login, {loginError: true});
