@@ -59,16 +59,9 @@
         <div class="mb-3">
             <label for="usercpf" class="form-label">Selecione o médico da consulta</label>
             <select class="form-select" name="medico">
-                <option value="1" selected>Dr. Sophia Lara Elisa Assunção</option>
-                <option value="2">Dr. Renato Henrique Manoel Araújo</option>
-                <option value="3">Dr. Matheus Ruan Gael da Paz</option>
-                <option value="4">Dr. Samuel Roberto Castro</option>
-                <option value="5">Dr. Lucca Julio Anthony das Neves</option>
-                <option value="6">Dr. Luna Carla Ferreira</option>
-                <option value="7">Dr. Beatriz Eliane Tatiane Martins</option>
-                <option value="8">Dr. Guilherme Isaac Ramos</option>
-                <option value="9">Dr. Augusto Hugo Sales</option>
-                <option value="10">Dr. Thiago Lucca Samuel Galvão</option>
+                {{#each medicos}}
+                    <option value={{dataValues.codigo}}>{{dataValues.nome}}</option>
+                {{/each}}
             </select>
         </div>
         <div class="mb-3">

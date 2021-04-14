@@ -3,41 +3,49 @@
 <div style="padding: 25px;">
     {{#if sucess}}
     <div class="alert alert-success" role="alert" style="margin-top: 25px;margin-bottom: 25px">
-        Paciente cadastrado com sucesso!
+        Médico cadastrado com sucesso!
     </div>
     {{/if}}
-    <form action="/add-paciente" method="POST" style="margin-bottom: 0px;">
-        <h3>Cadastro de pacientes</h3>
+    <form action="/add-medico" method="POST" style="margin-bottom: 0px;">
+        <h3>Cadastro de Médico</h3>
         <div class="mb-3">
-            <label class="form-label">Informe o nome do paciente</label>
+            <label class="form-label">Informe o nome do médico</label>
             <input type="text" class="form-control" name="nome">
         </div>
         <div class="mb-3">
-            <label  class="form-label">Informe o telefone do paciente</label>
+            <label class="form-label">Informe o telefone do médico</label>
             <input type="text" class="form-control" name="telefone">
         </div>
         <div class="mb-3">
-            <label class="form-label">Informe o email do paciente</label>
+            <label class="form-label">Informe o email do médico</label>
             <input type="text" class="form-control" name="email">
         </div>
         <div class="mb-3">
-            <label class="form-label">Informe o CEP do paciente</label>
+            <label class="form-label">Informe a especialidade do médico</label>
+            <input type="text" class="form-control" name="especialidade">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Informe o CRM do médico</label>
+            <input type="text" class="form-control" name="crm">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Informe o CEP do médico</label>
             <input type="text" class="form-control" name="cep">
         </div>
         <div class="mb-3">
-            <label class="form-label">Informe o logradouro do paciente</label>
+            <label class="form-label">Informe o logradouro do médico</label>
             <input type="text" class="form-control" name="logradouro">
         </div>
         <div class="mb-3">
-            <label class="form-label">Informe o bairro do paciente</label>
+            <label class="form-label">Informe o bairro do médico</label>
             <input type="text" class="form-control" name="bairro">
         </div>
         <div class="mb-3">
-            <label class="form-label">Informe a cidade do paciente</label>
+            <label class="form-label">Informe a cidade do médico</label>
             <input type="text" class="form-control" name="cidade">
-        </div>    
+        </div>
         <div class="mb-3">
-            <label class="form-label">Selecione o estado do paciente</label>
+            <label class="form-label">Selecione o estado do médico</label>
             <select class="form-select" name="estado">
                 <option value="AC" selected>Acre</option>
                 <option value="AL">Alagoas</option>
@@ -68,17 +76,17 @@
                 <option value="TO">Tocantins</option>
             </select>
         </div>
-       <div class="mb-3">
-            <label class="form-label">Informe o peso do paciente (em Kg)</label>
-            <input type="text" class="form-control" name="peso">
-        </div> 
         <div class="mb-3">
-            <label class="form-label">Informe a altura do paciente (em cm)</label>
-            <input type="text" class="form-control" name="altura">
+            <label class="form-label">Informe a data de contrato do médico</label>
+            <input type="date" class="form-control" name="data_contrato">
         </div>
         <div class="mb-3">
-            <label class="form-label">Informe o tipo sanguíneo do paciente</label>
-            <input type="text" class="form-control" name="tipo_sanguineo">
+            <label class="form-label">Informe o salario do médico</label>
+            <input type="number" class="form-control" name="salario">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Informe a senha do médico</label>
+            <input type="password" class="form-control" name="senha">
         </div>
         <div class="divPai">
             <button type="submit" class="btn btn-primary">Enviar</button>

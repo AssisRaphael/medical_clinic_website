@@ -46,19 +46,32 @@ rotas.get('/cadastro-endereco', (req, res) => {
 })
 
 rotas.get('/agendar-consulta', (req, res) => {
-    res.render('agendar-consulta');
+    try{
+        database.Medicos.findAll().then(function (m) {
+                res.render('agendar-consulta', {medicos: m});
+            });  
+    }
+    catch(e){}
 })
 
 rotas.get('/cadastro-funcionarios', (req, res) => {
-    if (req.session.login) {
+    if (req.session.isAuth)  {
         res.render('cadastro-funcionarios');
     } else {
         res.render('home');
     }
 })
 
+rotas.get('/cadastro-medico', (req, res) => {
+    if (req.session.isAuth) {
+        res.render('cadastro-medico');
+    } else {
+        res.render('home');
+    }
+})
+
 rotas.get('/cadastro-pacientes', (req, res) => {
-    if (req.session.login) {
+    if (req.session.isAuth) {
         res.render('cadastro-pacientes');
     } else {
         res.render('home');
@@ -103,7 +116,7 @@ rotas.get('/listar-todas-consultas', function (req, res) {
             let consulta = database.Agendas.findAll();
             var nomes = [];
             medicos.then(function (medicos) {
-                for(medico of medicos){
+                for(var medico of medicos){
                     nomes[medico.dataValues.codigo] = medico.dataValues.nome;
                 }
                 consulta.then((consultas)=>{
@@ -184,6 +197,7 @@ rotas.get('/cadastrar-paciente', (req, res) => {
 })
 
 rotas.post('/add-consulta', (req, res) => {
+    console.log('###########'+req.body.medico)
     try {
         database.Agendas.findAll({
             where: {
@@ -271,7 +285,7 @@ rotas.post('/login', (req, res) => {
                 res.render('admin', {session: req.session});
             }
             else{
-                res.render(login, {loginError: true});
+                res.render('login', {loginError: true});
             }
         });
     } catch (error) {
@@ -339,6 +353,33 @@ rotas.post('/add-paciente', (req, res) => {
             res.render('cadastro-pacientes',{sucess: true});
         }).catch(function (erro) {
             res.render('cadastro-pacientes',{sucess: false});
+        })
+    } catch (error) {
+        console.log("#Error: " + error);
+    }
+})
+
+rotas.post('/add-medico', (req, res) => {
+    try {
+        database.Medicos.create({
+            nome: req.body.nome,
+            email: req.body.email,
+            crm: req.body.crm,
+            especialidade: req.body.especialidade,
+            telefone: req.body.telefone,
+            cep: req.body.cep,
+            logradouro: req.body.logradouro,
+            bairro: req.body.bairro,
+            cidade: req.body.cidade,
+            estado: req.body.estado,
+            data_contrato: req.body.data_contrato,
+            salario: req.body.salario,
+            senha_hash: hashCode(req.body.senha)
+        }).then(function () {
+            res.render('cadastro-medico',{sucess: true});
+        }).catch(function (erro) {
+            res.render('cadastro-medico',{sucess: false});
+            console.log("erro: " + erro)
         })
     } catch (error) {
         console.log("#Error: " + error);

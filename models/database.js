@@ -171,7 +171,7 @@ const Medicos = database.sequelize.define('medicos', {
         allowNull: false
     },
     crm: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false
     }
 })
@@ -216,11 +216,11 @@ const Pacientes = database.sequelize.define('pacientes', {
         allowNull: false
     },
     peso: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false
     },
     altura: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false
     },
     tipo_sanguineo: {
