@@ -197,7 +197,6 @@ rotas.get('/cadastrar-paciente', (req, res) => {
 })
 
 rotas.post('/add-consulta', (req, res) => {
-    console.log('###########'+req.body.medico)
     try {
         database.Agendas.findAll({
             where: {
